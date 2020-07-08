@@ -5,3 +5,11 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     block content
+
+    // Scripts
+    if process.env.NODE_ENV == 'development'
+      script(src='/javascripts/dev.js')
+      script(src='/javascripts/hello.js')
+      script(src='/javascripts/_custom.js')
+    else
+      script(src='/javascripts/dist/compiled.min.js')
