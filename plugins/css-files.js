@@ -8,6 +8,8 @@ arr = [
     asset_folder + '/font-awesome-5/solid.min.css',
     css_folder + '/loaders/loader-pulse.css',
     css_folder + '/theme.css',
+    'stylesheets/css/custom.css',
+    // 'sass/custom.css',
 ];
 
 module.exports = arr;

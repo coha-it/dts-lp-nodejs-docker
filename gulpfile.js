@@ -6,6 +6,10 @@ const uglifycss = require('gulp-uglifycss');
 const minifyCSS = require('gulp-minify-css');
 const gp_sourcemaps = require('gulp-sourcemaps');
 
+// Sass
+const sass = require('gulp-sass');
+sass.compiler = require('node-sass');
+
 // Include JS Files
 var jsFiles = require('./plugins/js-files');
     jsFiles = jsFiles.map(i => './public/' + i);
@@ -24,6 +28,10 @@ const dirs = {
     css: {
         dest: './public/assets/',
         tmp: './public/assets/'
+    },
+    sass: {
+        src: './public/sass/*.sass',
+        dest: './public/sass'
     }
 }
 
@@ -39,6 +47,25 @@ gulp.task('js', function(){
         .pipe(gp_sourcemaps.write('./'))
         .pipe(gulp.dest(dirs.js.dest)); //this will save uglify.js into destination Directory defined above
 });
+
+// gulp.task('sass', function () {
+//   return gulp
+//         .src(dirs.sass.src)
+//         .pipe(sass().on('error', sass.logError))
+//         .pipe(gp_sourcemaps.init())
+//         .pipe(gp_sourcemaps.write('./'))
+//         .pipe(uglifycss()) //uglify uglify.css file
+//         .pipe(minifyCSS())
+//         .pipe(gulp.dest(dirs.sass.dest));
+// });
+
+// gulp.task('sass:watch', function () {
+//   return gulp
+//         .watch(
+//             dirs.sass.src,
+//             gulp.series('sass')
+//         );
+// });
 
 // To Concat and Uglify all CSS files in a particular folder
 gulp.task('css', function () {
