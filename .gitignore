@@ -117,5 +117,5 @@ dist
 
 # Ignore Public Assets
 # public/assets/
-public/images/
+# public/images/
 
