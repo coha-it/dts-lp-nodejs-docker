@@ -116,5 +116,6 @@ dist
 .pnp.*
 
 # Ignore Public Assets
-public/assets/
+# public/assets/
 public/images/
+
