@@ -1,0 +1,92 @@
+
+footer.bg-primary-3.text-white.links-white.pb-4.footer-1
+   .container
+      .row
+         .col-xl-auto.mr-xl-5.col-md-3.mb-4.mb-md-0
+            h5 Seiten
+            ul.nav.flex-row.flex-md-column
+               li.nav-item.mr-3.mr-md-0
+                  a.nav-link.fade-page.px-0.py-2(href='/') Startseite
+            ul.nav.flex-row.flex-md-column
+               li.nav-item.mr-3.mr-md-0
+                  a.nav-link.fade-page.px-0.py-2(href='/') Kontakt
+            ul.nav.flex-row.flex-md-column
+               li.nav-item.mr-3.mr-md-0
+                  a.nav-link.fade-page.px-0.py-2(href='/') Datenschutz
+            ul.nav.flex-row.flex-md-column
+               li.nav-item.mr-3.mr-md-0
+                  a.nav-link.fade-page.px-0.py-2(href='/') Impressum
+         .col-xl-auto.mr-xl-5.col-md-3
+            h5 App
+            ul.nav.flex-row.flex-md-column
+               li.nav-item.mr-3.mr-md-0
+                  a.nav-link.fade-page.px-0.py-2(href='https://app.dreamteam-survey.de/auth') Login
+               li.nav-item.mr-3.mr-md-0.disabled
+                  a.nav-link.fade-page.px-0.py-2.disabled(href='#')
+                     | iOS 
+                     .badge.badge-pill.badge-secondary(style='font-size: .75em;float: right; margin-left: 10px;') Bald Verfüg.
+
+               li.nav-item.mr-3.mr-md-0.disabled
+                  a.nav-link.fade-page.px-0.py-2.disabled(href='#')
+                     | Android 
+                     .badge.badge-pill.badge-secondary(style='font-size: .75em;float: right; margin-left: 10px;') Bald Verfüg.
+
+         .col.mt-4.mt-md-0.mt-lg-5.mt-xl-0.order-lg-4.order-xl-3
+            h5 Über Uns
+            ul.list-unstyled.d-flex.flex-wrap
+               li.col-12.col-lg-6.col-xl-12.px-0
+                  .row.my-2.my-md-3
+                     a.col-5(href='#')
+                        img.rounded.img-fluid.hover-fade-out(src='https://www.corporate-happiness.de/media/image/74/64/09/5-coha-team.jpg', alt='blog.1.image')
+                     .col
+                        a.h6(href='https://www.corporate-happiness.de/blog/wie-koennen-wir-gluecklich-er-werden-das-perma-modell-von-martin-seligman' target='blank')
+                           | Der Corporate-Happiness Blog
+                        .text-small.text-muted.mt-2 2. Februar
+         .col-lg.mt-2.mt-md-5.mt-lg-0.order-lg-3.order-xl-4
+            h5 Kontakt
+            .card.card-body.bg-white
+               p Treten Sie mit uns in Kontakt und holen Sie sich Ihr individuelles Angebot
+               form(data-form-email='', novalidate='', action='/forms/mailchimp.php')
+                  .d-flex.flex-column.flex-sm-row.form-group
+                     input.form-control.mr-sm-2.mb-2.mb-sm-0.w-auto.flex-grow-1(name='email', placeholder='E-Mail Adresse', type='email', required='')
+                     button.btn.btn-primary.btn-loading(type='submit', data-loading-text='Sending')
+                        // Icon for loading animation
+                        svg.icon.bg-white(width='24px', height='24px', viewBox='0 0 24 24', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
+                           title Icon For Loading
+                           g(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd')
+                              g
+                                 polygon(points='0 0 24 0 24 24 0 24', opacity='0')
+                              path(d='M12,4 L12,6 C8.6862915,6 6,8.6862915 6,12 C6,15.3137085 8.6862915,18 12,18 C15.3137085,18 18,15.3137085 18,12 C18,10.9603196 17.7360885,9.96126435 17.2402578,9.07513926 L18.9856052,8.09853149 C19.6473536,9.28117708 20,10.6161442 20,12 C20,16.418278 16.418278,20 12,20 C7.581722,20 4,16.418278 4,12 C4,7.581722 7.581722,4 12,4 Z', fill='#000000', fill-rule='nonzero', transform='translate(12.000000, 12.000000) scale(-1, 1) translate(-12.000000, -12.000000) ')
+                        span Kontakt
+                  div(data-recaptcha='', data-sitekey='INSERT_YOUR_RECAPTCHA_V2_SITEKEY_HERE', data-size='invisible', data-badge='bottomleft')
+                  .d-none.alert.alert-success.w-100(role='alert', data-success-message='')
+                     | Thanks, a member of our team will be in touch shortly.
+                  .d-none.alert.alert-danger.w-100(role='alert', data-error-message='')
+                     | Please fill all fields correctly.
+                  .text-small.text-muted Ihre Daten bleiben vertraulich und werden keinem 3. Unternehmen oder 3. Person mitgeteilt
+      .row
+         .col
+            hr
+      .row.flex-column.flex-lg-row.align-items-center.justify-content-center.justify-content-lg-between.text-center.text-lg-left
+         .col-auto
+            .d-flex.flex-column.flex-sm-row.align-items-center.text-small
+               .text-muted
+                  | © 2020 Corporate Happiness
+                  br
+                  | ® Diese Seite ist geschützt durch reCAPTCHA und Teil von Google's 
+                  a(href='https://www.google.com/policies/privacy/', target='_blank') Datenschutz-Bestimmungen
+                  |  und 
+                  a(href='https://policies.google.com/terms', target='_blank') Nutzungsbedingungen
+         .col-auto.mt-3.mt-lg-0
+            ul.list-unstyled.d-flex.mb-0
+               li.mx-3
+                  a.hover-fade-out(href='https://www.instagram.com/corporate_happiness/' target='blank')
+                     img.icon.icon-xs.bg-white(src='assets/img/icons/social/instagram.svg', alt='instagram', data-inject-svg='')
+               li.mx-3
+                  a.hover-fade-out(href='https://de-de.facebook.com/CorporateHappiness' target='blank')
+                     img.icon.icon-xs.bg-white(src='assets/img/icons/social/facebook.svg', alt='Facebook', data-inject-svg='')
+               li.mx-3
+                  a.hover-fade-out(href='https://www.corporate-happiness.de' target='blank')
+                     img.icon.icon-xs.bg-white(src='assets/img/icons/interface/icon-home.svg', alt='instagram', data-inject-svg='')
+a.btn.btn-primary.rounded-circle.btn-back-to-top(href='#top', data-smooth-scroll='', data-aos='fade-up', data-aos-offset='2000', data-aos-mirror='true', data-aos-once='false')
+   img.icon.bg-white(src='assets/img/icons/interface/icon-arrow-up.svg', alt='Icon', data-inject-svg='')

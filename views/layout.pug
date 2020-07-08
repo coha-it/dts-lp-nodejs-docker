@@ -1,15 +1,61 @@
 doctype html
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+    // Meta Tags
+    meta(charset='utf-8')
+    meta(content='width=device-width, initial-scale=1, shrink-to-fit=no' name='viewport')
 
-    // Scripts
+    // Author
+    meta(name='author' content='Corporate Happiness GmbH')
+    // description
+    meta(name='description' content='')
+    // keywords
+    meta(name='keywords' content='')
+    title= title
+    // <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    link(href='https://dreamteam-survey.s3.eu-central-1.amazonaws.com/images/logo/favicon/favicon.ico' rel='shortcut icon' type='image/x-icon')
+    link(href='https://dreamteam-survey.s3.eu-central-1.amazonaws.com/images/logo/favicon/favicon.svg' rel='icon' type='image/svg+xml' sizes='any')
+    link(href='https://dreamteam-survey.s3.eu-central-1.amazonaws.com/images/logo/favicon/favicon.png' rel='icon' type='image/png' sizes='any')
+
+    // Fonts
+    link(href="https://fonts.googleapis.com/css?family=Nunito:400,400i,600,700&display=swap" rel="stylesheet")
+
     if process.env.NODE_ENV == 'development'
-      script(src='/javascripts/dev.js')
-      script(src='/javascripts/hello.js')
-      script(src='/javascripts/_custom.js')
+      // Styles Dev
+      if cssFiles
+        each file in cssFiles
+          link(rel='stylesheet' type="text/css" href=file)
     else
-      script(src='/javascripts/dist/compiled.min.js')
+      // Styles Live
+      link(rel='stylesheet' type="text/css" href='/assets/dist.min.css')
+
+  body(data-spy="scroll" data-target=".navbar-nav" data-offset="90")
+
+    // Loader
+    .loader
+      .loading-animation
+    .loader
+      .loading-animation
+
+    // Navigation
+    include includes/navigation
+
+    // Main Content
+    main.animsition-overlay(data-animsition-overlay='true')
+      block content
+
+    // Footer
+    include includes/footer
+
+    if process.env.NODE_ENV == 'development'
+      // Scripts Dev
+      if jsFiles
+        each file in jsFiles
+          script(src=file)
+    else
+      // Script Live
+      script(src='/javascripts/dist/dist.min.js')
+
+    // Removes page load animation when window is finished loading
+    script(type="text/javascript").
+      window.addEventListener("load",function(){document.querySelector('body').classList.add('loaded');});
